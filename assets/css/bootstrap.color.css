@@ -1,0 +1,150 @@
+:root {
+	--gray-light: #dee2e6;
+	--gray-lighter: #a2a9ae;
+	--primary: #00669a;
+	--primary-darker: #005580;
+	--primary-dark: #004467;
+	--primary-darkness: #00334d;
+	--primary-vivid: #1bb2ff;
+	--complementary: #9a3400;
+}
+
+.badge-primary,
+.btn-primary,
+.btn-primary.disabled,
+.btn-primary:disabled,
+.btn-outline-primary:hover,
+.btn-outline-primary:not(:disabled):not(.disabled).active,
+.btn-outline-primary:not(:disabled):not(.disabled):active,
+.custom-control-input:checked~.custom-control-label::before,
+.custom-checkbox .custom-control-input:indeterminate~.custom-control-label::before,
+.dropdown-item.active,
+.dropdown-item:active,
+.list-group-item.active,
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link,
+.page-item.active .page-link,
+.progress-bar,
+.show>.btn-outline-primary.dropdown-toggle {
+	background-color: var(--primary);
+}
+
+.btn-primary,
+.btn-primary.disabled,
+.btn-primary:disabled,
+.btn-outline-primary,
+.btn-outline-primary:hover,
+.btn-outline-primary:not(:disabled):not(.disabled).active,
+.btn-outline-primary:not(:disabled):not(.disabled):active,
+.custom-control-input:checked~.custom-control-label::before,
+.custom-checkbox .custom-control-input:indeterminate~.custom-control-label::before,
+.list-group-item.active,
+.page-item.active .page-link,
+.show>.btn-outline-primary.dropdown-toggle {
+	border-color: var(--primary);
+}
+
+.btn-outline-primary,
+.btn-outline-primary.disabled,
+.btn-outline-primary:disabled,
+.page-link {
+	color: var(--primary);
+}
+
+.bg-primary {
+	background-color: var(--primary) !important;
+}
+
+.border-primary {
+	border-color: var(--primary) !important;
+}
+
+.text-primary {
+	color: var(--primary) !important;
+}
+
+a.badge-primary:focus,
+a.badge-primary:hover,
+.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active,
+.show>.btn-primary.dropdown-toggle {
+	background-color: var(--primary-dark);
+}
+
+a.bg-primary:focus,
+a.bg-primary:hover,
+button.bg-primary:focus,
+button.bg-primary:hover {
+	background-color: var(--primary-dark) !important;
+}
+
+.btn-primary:hover {
+	border-color: var(--primary-dark);
+}
+
+.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active,
+.show>.btn-primary.dropdown-toggle {
+	border-color: var(--primary-darkness);
+}
+
+.btn-primary:hover {
+	background-color: var(--primary-darker);
+}
+
+.nav-pills .nav-link {
+	border: 1px solid var(--primary);
+}
+
+
+.bg-gray {
+	background-color: var(--gray-light);
+}
+
+.border-gray, .btn-light {
+	border-color: var(--gray);
+}
+
+.text-gray, .page-link {
+	color: var(--gray);
+}
+
+.page-item.active .page-link {
+	background-color: var(--gray);
+	border-color: var(--gray);
+}
+
+.nav-pills-gray .nav-link {
+	background-color: var(--light);
+	border-color: var(--gray-light);
+	color: var(--gray-dark);
+}
+
+.nav-pills-gray .nav-link.active,
+.nav-pills-gray .show>.nav-link {
+	background-color: var(--gray-light);
+	border-color: var(--gray-light);
+	color: var(--gray-dark);
+}
+
+.btn-light:hover,
+.btn-light:not(:disabled):not(.disabled).active,
+.btn-light:not(:disabled):not(.disabled):active,
+.show>.btn-light.dropdown-toggle,
+a.border-gray:focus,
+a.border-gray:hover {
+	border-color: var(--gray-dark);
+}
+
+.nav-link.btn-light, .nav-link.btn-light:hover {
+	color: var(--gray-dark) !important;
+}
+
+
+a, a.text-primary, .btn-link {
+	color: var(--primary);
+}
+
+a:hover, a.text-primary:hover, .btn-link:hover {
+	color: var(--primary-dark);
+}

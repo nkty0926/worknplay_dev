@@ -1,0 +1,51 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+
+RewriteRule ^sitemap\.xml$ /sitemap.php [PT,L]
+
+
+RewriteRule ^actions$ / [R=301,L]
+RewriteRule ^actions/$ / [R=301,L]
+
+
+RewriteRule ^design$ /design/_sitemap.php [R=301,L]
+RewriteRule ^design/$ /design/_sitemap.php [R=301,L]
+RewriteRule ^design/([^.]+)$ /design/$1.php [QSA,PT,L]
+
+
+RewriteRule ^([^./]+)$ /index.php?MAIN=$1&PAGE=&MENU=&PK=&SUB= [QSA,PT,L]
+RewriteRule ^([^./]+)/([^./]+)$ /index.php?MAIN=$1&PAGE=$2&MENU=&PK=&SUB= [QSA,PT,L]
+RewriteRule ^([^./]+)/([^./]+)/([^./]+)$ /index.php?MAIN=$1&PAGE=$2&MENU=$3&PK=&SUB= [QSA,PT,L]
+RewriteRule ^([^./]+)/([^./]+)/([^./]+)/([^./]+)$ /index.php?MAIN=$1&PAGE=$2&MENU=$3&PK=$4&SUB= [QSA,PT,L]
+RewriteRule ^([^./]+)/([^./]+)/([^./]+)/([^./]+)/([^./]+)$ /index.php?MAIN=$1&PAGE=$2&MENU=$3&PK=$4&SUB=$5 [QSA,PT,L]
+
+RewriteRule ^([^./]+)/$ /$1 [R=301,L]
+RewriteRule ^([^./]+)/([^./]+)/$ /$1/$2 [R=301,L]
+RewriteRule ^([^./]+)/([^./]+)/([^./]+)/$ /$1/$2/$3 [R=301,L]
+RewriteRule ^([^./]+)/([^./]+)/([^./]+)/([^./]+)/$ /$1/$2/$3/$4 [R=301,L]
+RewriteRule ^([^./]+)/([^./]+)/([^./]+)/([^./]+)/([^./]+)/$ /$1/$2/$3/$4/$5 [R=301,L]
+
+
+RewriteRule ^pages/common/error404.php$ - [PT,L]
+RewriteRule ^(classes|libraries|pages)(.*)php$ /pages/common/error404.php [PT,L]
+
+ErrorDocument 400 /pages/common/error404.php
+ErrorDocument 401 /pages/common/error404.php
+ErrorDocument 403 /pages/common/error404.php
+ErrorDocument 404 /pages/common/error404.php
+ErrorDocument 405 /pages/common/error404.php
+ErrorDocument 408 /pages/common/error404.php
+ErrorDocument 410 /pages/common/error404.php
+ErrorDocument 411 /pages/common/error404.php
+ErrorDocument 412 /pages/common/error404.php
+ErrorDocument 413 /pages/common/error404.php
+ErrorDocument 414 /pages/common/error404.php
+ErrorDocument 415 /pages/common/error404.php
+ErrorDocument 500 /pages/common/error404.php
+ErrorDocument 501 /pages/common/error404.php
+ErrorDocument 502 /pages/common/error404.php
+ErrorDocument 503 /pages/common/error404.php
+ErrorDocument 506 /pages/common/error404.php

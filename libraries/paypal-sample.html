@@ -1,0 +1,117 @@
+<div style="max-width:270px;margin:auto;"><div id="paypal-button-custom"></div></div>
+<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+<script>
+paypal.Button.render({
+
+env: 'production', // sandbox | production
+
+locale: 'en_US',
+
+style: {
+  layout: 'horizontal',
+  size: 'responsive',
+  shape: 'rect',
+  color: 'gold',
+  label: 'paypal',
+  tagline: false,
+  fundingicons: false
+},
+
+funding: {
+  allowed: [
+    paypal.FUNDING.CARD,
+    //paypal.FUNDING.CREDIT
+  ],
+  //disallowed: []
+},
+
+commit: true,
+
+client: {
+  //sandbox: 'AUCt-Clf_XEWzKeMZkxHaTBS69o8Sw1L0JKuLbUWWzWgK2D35tWbtXAiI4aYFG5ZIPqu3iUsO2xxIbN5',
+  sandbox: 'AWZnhbWvb9iDfdr9bEk3W-TX8Eb51nPOahDhqo2UZF_hYa3k5M6RvT7r9KVuARNUoR8HUMh_XLak2U0w',
+  production: 'AQg67gjlgLsYHcg1nTErPsnOOMSlA6tRkDxMDkInrvrusNSKNvTmWQoHOr_YWaK1NVY0uS0OP14-tGyO'
+},
+
+/*
+payment: function(data, actions) {
+  return actions.payment.create({
+    transactions: [{
+      amount: {
+        total: '0.01',
+        currency: 'USD'
+      }
+    }]
+  });
+},
+*/
+
+payment: function(data, actions) {
+  return actions.payment.create({
+   transactions: [{
+      item_list: {
+        items: [
+          {
+            currency: 'USD',
+            name: 'hat',
+            description: 'Brown hat.',
+            price: '3',
+            quantity: '5',
+            //tax: '0.01',
+            //sku: '1',
+          },
+          {
+            currency: 'USD',
+            name: 'handbag',
+            description: 'Black handbag.',
+            price: '15',
+            quantity: '1',
+            //tax: '0.02',
+            //sku: 'product34',
+          }
+        ],
+/*
+        shipping_address: {
+          recipient_name: 'Brian Robinson',
+          line1: '4th Floor',
+          line2: 'Unit #34',
+          city: 'San Jose',
+          country_code: 'US',
+          postal_code: '95131',
+          phone: '011862212345678',
+          state: 'CA',
+        }
+*/
+      },
+      amount: {
+        currency: 'USD',
+        total: '30.11',
+        details: {
+          subtotal: '30.00',
+          //tax: '0.07',
+          //shipping: '0.03',
+          //insurance: '0.01',
+          handling_fee: '0.11',
+          //shipping_discount: '-0.11',
+        }
+      },
+      description: 'The payment transaction description.',
+      //custom: '90048630024435',
+      //invoice_number: '12345',
+      //soft_descriptor: 'ECHI5786786',
+      //payment_options: { allowed_payment_method: 'INSTANT_FUNDING_SOURCE' },
+    }],
+    //note_to_payer: 'Contact us for any questions on your order.'
+  });
+},
+
+// Execute the payment
+onAuthorize: function(data, actions) {
+  return actions.payment.execute().then(function() {
+    // Show a confirmation message to the buyer
+    window.alert('Thank you for your purchase!');
+  });
+}
+
+}, '#paypal-button-custom');
+</script>
