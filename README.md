@@ -1,5 +1,5 @@
-# worknplay_dev
-# Server-Side Online Recruitment/Headhunting Webpage For Foreigners Seeking Employment in South Korea 
+# Worknplay App 
+# Server-Side Online Recruitment/Headhunting App For Foreigners Seeking Employment in South Korea 
 
 
 ![1](https://user-images.githubusercontent.com/52402408/140054939-ec935c0a-ec42-4fee-9eec-67519e8452c0.png)
